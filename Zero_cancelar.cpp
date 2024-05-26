@@ -1,19 +1,42 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+
 using namespace std;
 
-int main(){
-    int  n, i=0, v[100];
 
-    while(cin>>n){
-        v[i] = n;
-        if(n==0){
-            v[i-1] = 0;
-        }
-        i++;
+int main (){
+    int tamanho;
+    cin >> tamanho;
     
+    int v[tamanho];
+    int pos = 0;
+
+    for(int i=0;i<tamanho;i++){
+        int n;
+        cin >> n;
+        if (n!=0){
+            v[pos] = n;
+            pos++;
+        }
+        else{
+ 
+            pos--;
+            while (pos > 0 && v[pos] == 0) {
+                pos--;
+            }
+
+            v[pos] = 0;
+            }
+        }
+    
+
+    int soma=0;
+    for(int i=0; i<pos;i++){
+        soma+=v[i];
     }
-    for (i; v[i]; i++){
-        cout << v[i] << endl;
-    }
+    cout << soma << endl;
+    
+    return 0;
 }
+
+
+

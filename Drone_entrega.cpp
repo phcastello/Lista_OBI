@@ -19,7 +19,6 @@ int main(){
     else
         medC = Pc;
     
-    // Minc, medC e maxC setados
 
     if (minC <= minJ && medC <= maxJ) {
         cout << "S";
